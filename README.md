@@ -1,13 +1,17 @@
 [WeBWorK](https://github.com/openwebwork) Installation Script(s)
 ===============================================================
 
+(WIP!)
+
 This repository consists of a perl script `ww_install.pl`, along with some supporting bash scripts, 
 config files, and perl modules designed to work together install the open source online homework system 
 [WeBWorK](https://github.com/openwebwork).
 
-The script has been updated to install WeBWorK 2.13 as of 12/1/2017 by Arnold Pizer.
+~~The script has been updated to install WeBWorK 2.13 as of 12/1/2017 by Arnold Pizer.~~
 
-Temporary General Instructions for installing WeBWorK 2.13 using the ww_install script. 
+The script is in progress of being updated to install WebWork 2.18 as of right now.
+
+Temporary General Instructions for installing WeBWorK 2.13 using the ww_install script. (*)
 *  You should use the perl script ww_install.pl as the bash shell script install_webwork.sh has not yet been updated.
 *  First look at the notes below to see if you need to do anything before running the ww_install.pl script.
 *  After any preliminaries in a working directory run
@@ -17,9 +21,10 @@ Temporary General Instructions for installing WeBWorK 2.13 using the ww_install 
    - Run perl bin/ww_install as root. Note either use sudo or su to root depending on the system.
    - Accept all defaults
 
-
+Note: (*) is old documentation, should update ASAP
 
 It has been tested and works on 
+<!---
 *  Debian 9
    - Notes for Debian
      - Before running the script ww_install.pl do the following:
@@ -50,6 +55,10 @@ It has been tested and works on
        1. Run the command: sudo yum install perl-core
        2. Edit the file /etc/selinux/config setting: SELINUX=disabled and reboot.
      - Now run the script ww_install as root
+
+--->
+
+(Todo: Test on Ubuntu 22.04 and verify)
 
 On these systems it did install WeBWorK. 
 
@@ -84,6 +93,8 @@ For more control over the process you can clone this repository with
 
 and then run ` sudo perl ww_install.pl`.  
 
+(Note: the instructions above might (not) be changed)
+
 Contents
 --------
 
@@ -99,6 +110,8 @@ webwork_install.log to your top level webwork directory (e.g. `/opt/webwork`) an
 The goal of `ww_install.pl` is to install WeBWorK on any system with a properly set up distribution file in the `distros` folder.  
 
 It is an interactive script based on the core perl module [Term::UI](http://perldoc.perl.org/Term/UI.html), and is written with the goal of being cross-platform.  It does use some linux built-ins, and work is needed to ensure that this script will work as well on unix machines. Again, contributions of work in this direction would be welcome.
+
+(the same thing above also applies here)
 
 ### distros
 
